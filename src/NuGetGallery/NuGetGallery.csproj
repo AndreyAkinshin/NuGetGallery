@@ -764,6 +764,8 @@
     <Compile Include="Migrations\201706061829243_AddSemVer2LatestVersionColumns.Designer.cs">
       <DependentUpon>201706061829243_AddSemVer2LatestVersionColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Security\RequireSecurePushForCoOwnersPolicy.cs" />
+    <Compile Include="Security\SecurePushMessages.cs" />
     <Compile Include="Security\SecurePushSubscription.cs" />
     <Compile Include="Security\IUserSecurityPolicySubscription.cs" />
     <Compile Include="OData\Serializers\FeedPackageAnnotationStrategy.cs" />
