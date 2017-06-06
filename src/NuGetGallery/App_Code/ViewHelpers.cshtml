@@ -33,6 +33,11 @@
     }
 }
 
+@helper ImageFallback(string url)
+{
+    <text>onerror="this.src='@url'; this.onerror = null;"</text>
+}
+
 @helper Option(string value, string label, string currentValue)
 {
     <option value="@value" @if (value == currentValue)
