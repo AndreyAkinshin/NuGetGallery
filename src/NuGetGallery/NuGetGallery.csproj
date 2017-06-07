@@ -33,6 +33,7 @@
     <MvcBuildViews Condition=" '$(MvcBuildViews)' == '' ">false</MvcBuildViews>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -765,7 +766,6 @@
       <DependentUpon>201706061829243_AddSemVer2LatestVersionColumns.cs</DependentUpon>
     </Compile>
     <Compile Include="Security\RequireSecurePushForCoOwnersPolicy.cs" />
-    <Compile Include="Security\SecurePushMessages.cs" />
     <Compile Include="Security\SecurePushSubscription.cs" />
     <Compile Include="Security\IUserSecurityPolicySubscription.cs" />
     <Compile Include="OData\Serializers\FeedPackageAnnotationStrategy.cs" />
