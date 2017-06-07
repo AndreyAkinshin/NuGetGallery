@@ -52,6 +52,9 @@ body {
     height: 330px;
   }
 }
+.btn-search {
+  height: 36px;
+}
 .borderless > tbody > tr > td {
   border: none;
 }

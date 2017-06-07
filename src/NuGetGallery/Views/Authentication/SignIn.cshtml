@@ -14,6 +14,8 @@
 
     @foreach (var provider in Model.Providers)
     {
+        var accountNoun = provider.UI.AccountNoun ?? "external account";
+        var accountArticle = provider.UI.AccountNoun != null ? "a" : "an";
         <div class="row">
             <div class="col-sm-12">
                 <p>
@@ -24,8 +26,8 @@
                     else
                     {
                         <text>
-                            We recommend using a @(provider.UI.AccountNoun ?? "external account") to sign in to NuGet.org.
-                            If you already have a NuGet.org account, click the button below to associate it with your @(provider.UI.AccountNoun ?? "external account").
+                            We recommend using @accountArticle @accountNoun to sign in to NuGet.org.
+                            If you already have a NuGet.org account, click the button below to associate it with your @accountNoun.
                             If not, click the button anyway and we'll create a new NuGet.org account for you!
                         </text>
                     }
@@ -38,7 +40,8 @@
                    href="@Url.Action("Authenticate", new {provider = provider.ProviderName, returnUrl = ViewData[Constants.ReturnUrlViewDataKey]})">
                     @if (!string.IsNullOrEmpty(@provider.UI.IconImagePath))
                     {
-                        <img height="24" width="24" src="@Href(provider.UI.IconImagePath)" alt="Icon for @provider.ProviderName authentication provider" />
+                        <img height="24" width="24" alt="" aria-hidden="true"
+                             src="@Href(provider.UI.IconImagePath)" />
                     }
                     @provider.UI.SignInMessage
                 </a>
